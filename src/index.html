@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Nifemi! 🎉</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="floating-elements">
+        <!-- Balloons -->
+        <div class="balloon" style="--delay: 2s; --x: 20%;">🎈</div>
+        <div class="balloon" style="--delay: 4s; --x: 40%;">🎈</div>
+        <div class="balloon" style="--delay: 6s; --x: 60%;">🎈</div>
+        <div class="balloon" style="--delay: 8s; --x: 80%;">🎈</div>
+
+        <!-- Cakes -->
+        <div class="cake" style="--delay: 3s; --x: 30%;">🎂</div>
+        <div class="cake" style="--delay: 7s; --x: 70%;">🧁</div>
+
+        <!-- Number 17 -->
+        <div class="number" style="--delay: 1s; --x: 25%;">1</div>
+        <div class="number" style="--delay: 1.5s; --x: 75%;">7</div>
+
+        <!-- Additional party elements -->
+        <div class="party-emoji" style="--delay: 5s; --x: 15%;">🎉</div>
+        <div class="party-emoji" style="--delay: 9s; --x: 85%;">🎊</div>
+        <div class="party-emoji" style="--delay: 4s; --x: 45%;">🎁</div>
+        <div class="party-emoji" style="--delay: 6s; --x: 65%;">⭐</div>
+    </div>
+
+    <div class="landing-container">
+        <div class="birthday-message">
+            <h1 class="animate-title">Happy Birthday, Nifemi! 🎂</h1>
+            <p class="animate-text">Welcome to your magical 17th year! 💫</p>
+            <p class="subtitle">This is my special gift for you...</p>
+        </div>
+        
+        <button class="gift-button" id="giftButton">
+            <span class="button-text">Open Gift</span>
+            <div class="sparkles"></div>
+        </button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/audioManager.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/animations.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const giftButton = document.getElementById('giftButton');
+            
+            if (giftButton) {
+                giftButton.addEventListener('click', () => {
+                    giftButton.classList.add('button-clicked');
+                    // Add sparkle effect before transition
+                    const sparkles = giftButton.querySelector('.sparkles');
+                    if (sparkles) {
+                        sparkles.style.display = 'block';
+                    }
+                    // Navigate to timeline page after animation
+                    setTimeout(() => {
+                        window.location.href = 'pages/timeline.html';
+                    }, 500);
+                });
+            }
+        });
+    </script>
+
+    <!-- Remove or comment out the audio tag since we're using audioManager -->
+    <!-- <audio id="bgMusic" loop>
+        <source src="assets/audio/birthday-music.mp3" type="audio/mp3">
+    </audio> -->
+</body>
+</html>

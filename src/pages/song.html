@@ -1,0 +1,39 @@
+-website\src\pages\song.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Song For You 🎵</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animations.css">
+</head>
+<body>
+    <div class="song-container page-transition">
+        <h1 class="animate-title">Your Birthday Song 🎵</h1>
+        
+        <div class="music-player hover-effect">
+            <div class="player-disc"></div>
+            <div class="player-controls">
+                <button id="playButton" class="play-button">
+                    <span class="play-icon">▶️</span>
+                </button>
+                <div class="song-info">
+                    <h3>Happy Birthday Nifemi</h3>
+                    <p>A special song for a special person</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="final-message animate-text">
+            <p>Thank you for being amazing! 💖</p>
+            <a href="../index.html" class="nav-button button-animate">Start Over</a>
+        </div>
+    </div>
+    <script src="../js/audioManager.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
+    <script src="../js/song.js"></script>
+    <!-- Add this to all HTML files before </body> -->
+<script src="../js/background.js"></script>
+</body>
+</html>

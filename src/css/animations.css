@@ -1,0 +1,69 @@
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes sparkle {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(0); opacity: 0; }
+}
+
+.button-animate {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.page-transition {
+    animation: slideIn 0.5s ease-in-out;
+}
+
+.hover-effect {
+    transition: transform 0.3s;
+}
+
+.hover-effect:hover {
+    transform: scale(1.05);
+}
+
+.animate-title {
+    animation: fadeIn 1.5s ease-out;
+}
+
+.animate-text {
+    animation: fadeIn 1.5s ease-out 0.5s both;
+}
+
+.sparkles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.sparkles::before,
+.sparkles::after {
+    content: "✨";
+    position: absolute;
+    animation: sparkle 1s infinite;
+}
+
+.sparkles::before {
+    left: 20%;
+    top: -20%;
+}
+
+.sparkles::after {
+    right: 20%;
+    bottom: -20%;
+}
