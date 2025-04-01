@@ -19,24 +19,29 @@ document.addEventListener('DOMContentLoaded', () => {
     Your bestie 🎉`;
 
     const createLetterSpans = () => {
-        // Split by characters while preserving whitespace
-        const letters = [...message];
-        letters.forEach((letter, index) => {
+        // Clear existing content
+        letterContainer.innerHTML = '';
+        
+        // Split by characters while preserving whitespace and newlines
+        const characters = [...message];
+        
+        characters.forEach((char, index) => {
             const span = document.createElement('span');
-            if (letter === ' ') {
-                // Add a non-breaking space for visible spaces
-                span.innerHTML = '&nbsp;';
-            } else if (letter === '\n') {
-                // Create line breaks
+            
+            if (char === '\n') {
                 span.innerHTML = '<br>';
+            } else if (char === ' ') {
+                span.innerHTML = '&nbsp;';
             } else {
-                span.textContent = letter;
+                span.textContent = char;
             }
+            
             span.className = 'letter';
-            span.style.animationDelay = `${index * 0.02}s`;
+            span.style.animationDelay = `${index * 20}ms`;
             letterContainer.appendChild(span);
         });
     };
 
+    // Call the function when the page loads
     createLetterSpans();
 });
