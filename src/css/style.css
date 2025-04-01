@@ -243,18 +243,20 @@ button:hover {
 
 .memory-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-    gap: clamp(1rem, 3vw, 2rem);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
     width: 100%;
+    padding: 1rem;
 }
 
 .memory-item {
     position: relative;
     width: 100%;
-    aspect-ratio: 1;
+    height: 300px; /* Fixed height instead of aspect-ratio */
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem; /* Add space between items */
 }
 
 .memory-image {
@@ -318,6 +320,7 @@ button:hover {
     margin: 0 auto;
     padding: 2rem;
     text-align: left;
+    font-size: 1.1rem;
 }
 
 .letter {
@@ -427,7 +430,21 @@ p {
 
     .memory-grid {
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: 1.5rem;
+    }
+
+    .memory-item {
+        height: 250px; /* Slightly smaller on mobile */
+    }
+
+    .memory-overlay {
+        opacity: 1;
+        transform: translateY(0);
+        background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.8),
+            rgba(0, 0, 0, 0.4)
+        );
     }
 
     .landing-container,
@@ -438,6 +455,12 @@ p {
         margin: 0;
         border-radius: 0;
         width: 100%;
+    }
+
+    .letter-container {
+        padding: 1rem;
+        font-size: 1rem;
+        line-height: 1.6;
     }
 }
 
@@ -533,29 +556,21 @@ p {
 @media (max-width: 768px) {
     .memory-grid {
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: 1.5rem;
     }
 
     .memory-item {
-        aspect-ratio: 4/3;
+        height: 250px; /* Slightly smaller on mobile */
     }
 
     .memory-overlay {
+        opacity: 1;
         transform: translateY(0);
         background: linear-gradient(
             to top,
             rgba(0, 0, 0, 0.8),
             rgba(0, 0, 0, 0.4)
         );
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-    }
-
-    .memory-image {
-        height: 100%;
-        object-fit: cover;
     }
 }
 
